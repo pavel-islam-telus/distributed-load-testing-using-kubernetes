@@ -29,13 +29,8 @@ class MetricsTaskSet(TaskSet):
 
     @task(1)
     def login(self):
-        self.client.post(
-            '/login', {"deviceid": self._deviceid})
-
-    @task(999)
-    def post_metrics(self):
-        self.client.post(
-            "/metrics", {"deviceid": self._deviceid, "timestamp": datetime.now()})
+        self.client.get(
+            '/version')
 
 
 class MetricsLocust(HttpLocust):
