@@ -27,10 +27,10 @@ class MetricsTaskSet(TaskSet):
     def on_start(self):
         self._deviceid = str(uuid.uuid4())
 
-    @task(1)
+	@task(1)
     def searchServiceAllCouponCommitment(self):
         self.client.get(
-            '/search/v1/catalogobjects?brand=telus&lob=homesolution&EOMCustomerAccountType=consumer&content_type=promotion&EOMPromotionType=COUPON,COMMITMENT')
+            '/bff/search/dv/v1/catalogobjects?brand=telus&lob=homesolution&EOMCustomerAccountType=consumer&content_type=promotion&EOMPromotionType=COUPON,COMMITMENT')
 
 
 class MetricsLocust(HttpLocust):

@@ -36,7 +36,7 @@ spec:
             - name: LOCUST_MODE
               value: master
             - name: TARGET_HOST
-              value: https://ent-offer-mgr-np.cloudapps.telus.com/dv
+              value: https://ent-offer-mgr-np.cloudapps.telus.com
           ports:
             - name: loc-master-web
               containerPort: 8089
