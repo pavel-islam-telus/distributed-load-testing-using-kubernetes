@@ -31,12 +31,12 @@ spec:
     spec:
       containers:
         - name: locust-master
-          image: gcr.io/[PROJECT_ID]/locust-tasks:latest
+          image: gcr.io/cio-gke-devops-e4993356/offer-eom-fifa/locust-tasks:latest
           env:
             - name: LOCUST_MODE
               value: master
             - name: TARGET_HOST
-              value: https://[TARGET_HOST]
+              value: https://ent-offer-mgr-np.cloudapps.telus.com/dv
           ports:
             - name: loc-master-web
               containerPort: 8089
