@@ -35,4 +35,4 @@ spec:
       name: loc-master-p2
   selector:
     app: locust-master
-  type: LoadBalancer
+  type: ClusterIP
