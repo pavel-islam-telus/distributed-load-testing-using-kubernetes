@@ -28,9 +28,9 @@ class MetricsTaskSet(TaskSet):
         self._deviceid = str(uuid.uuid4())
 
     @task(1)
-    def login(self):
+    def searchServiceAllCouponCommitment(self):
         self.client.get(
-            '/version')
+            '/search/v1/catalogobjects?brand=telus&lob=homesolution&EOMCustomerAccountType=consumer&content_type=promotion&EOMPromotionType=COUPON,COMMITMENT')
 
 
 class MetricsLocust(HttpLocust):
