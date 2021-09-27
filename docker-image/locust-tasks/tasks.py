@@ -27,8 +27,8 @@ class MetricsTaskSet(TaskSet):
     def on_start(self):
         self._deviceid = str(uuid.uuid4())
 
-	@task(1)
-    def searchServiceAllCouponCommitment(self):
+    @task(1)
+    def searchAllCouponCommitment(self):
         self.client.get(
             '/bff/search/dv/v1/catalogobjects?brand=telus&lob=homesolution&EOMCustomerAccountType=consumer&content_type=promotion&EOMPromotionType=COUPON,COMMITMENT')
 
