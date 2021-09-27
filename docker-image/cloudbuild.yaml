@@ -1,0 +1,14 @@
+steps:
+# start the docker build
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/${_REPO_ID}/offer-eom-fifa/locust-tasks:latest', '.']
+  dir: ${_BASE_DIR}
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', '-Z', 'helm/*', 'gs://${_REPO_ID}-kubernetes-manifests/offer-eom-fifa/']
+  dir: ${_BASE_DIR}
+substitutions:
+  _BUILDER_PROJECT: terraform-telus-bto-admin
+  _BASE_DIR:
+  _REPO_ID: cio-gke-devops-e4993356
+images: ['gcr.io/${_REPO_ID}/offer-eom-fifa/locust-tasks:latest']
+timeout: 1800s
