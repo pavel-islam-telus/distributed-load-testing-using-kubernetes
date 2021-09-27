@@ -1,7 +1,7 @@
 steps:
 # start the docker build
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=gcr.io/${_REPO_ID}/offer-eom-fifa/locust-tasks:latest', '.']
+  args: ['build', '--tag=gcr.io/${_REPO_ID}/offer-eom-fifa/locust-tasks:latest', './docker-image']
   dir: ${_BASE_DIR}/docker-image
 substitutions:
   _BUILDER_PROJECT: terraform-telus-bto-admin
