@@ -5,7 +5,7 @@ steps:
   dir: ${_BASE_DIR}/docker-image
 substitutions:
   _BUILDER_PROJECT: terraform-telus-bto-admin
-  _BASE_DIR:
+  _BASE_DIR: .
   _REPO_ID: cio-gke-devops-e4993356
 images: ['gcr.io/${_REPO_ID}/offer-eom-fifa/locust-tasks:latest']
 timeout: 1800s
